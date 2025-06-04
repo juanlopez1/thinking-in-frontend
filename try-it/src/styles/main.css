@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+body {
+    @apply bg-[#242424];
+    @apply text-white;
+    @apply min-h-screen;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+#root {
+    @apply flex flex-col;
+    @apply min-h-screen;
+    @apply scheme-dark;
+}
+
+main {
+    @apply grid grid-cols-12;
+    @apply grow;
+}
+
+header {
+    @apply flex flex-row;
+    @apply items-center justify-center;
+    @apply py-12;
+    @apply gap-4;
+}
+
+.header__logo {
+    @apply w-14;
+}
+
+.header__title {
+    @apply text-3xl;
+    @apply w-44;
+    line-height: 1.1;
+}
+
+.animation-spin {
+    animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) normal;
+}
+
+.animation-spin:hover {
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    @apply absolute;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply left-1/2 top-2/4;
+}
+
+.spinner > svg {
+    @apply inline;
+    @apply w-12 h-12;
+    @apply animate-spin;
+    @apply fill-[#242424];
+    @apply text-[#fff];
+}
+
+.index__container {
+    @apply grid grid-cols-3 grid-rows-2;
+    @apply col-start-3 col-span-8;
+    @apply gap-4;
+    @apply place-self-center;
+}
+
+.button-card {
+    @apply flex flex-col;
+    @apply text-left;
+    @apply bg-[#2e2e2e];
+    @apply rounded-2xl;
+    @apply p-8;
+    @apply cursor-pointer;
+    @apply select-none;
+    @apply shadow;
+}
+
+.button-card:hover {
+    @apply bg-[#333];
+}
+
+.button-card__title {
+    @apply text-xl text-yellow-200;
+    @apply border-b border-dotted;
+    @apply w-full;
+    @apply pb-2;
+    @apply mb-2;
+}
+
+.module-card__description {
+    @apply text-lg;
+}
+
+.srp__container {
+    @apply col-start-3 col-span-8;
+}
