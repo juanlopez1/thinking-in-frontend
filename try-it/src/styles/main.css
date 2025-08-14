@@ -1,17 +1,13 @@
-@import "tailwindcss";
+@import "./themes.css";
 
-body {
-    @apply bg-[#242424];
-    @apply text-white;
-    @apply min-h-screen;
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-}
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 #root {
     @apply flex flex-col;
     @apply min-h-screen;
-    @apply scheme-dark;
 }
 
 main {
@@ -67,40 +63,22 @@ header {
     @apply text-[#fff];
 }
 
-.index__container {
+.index {
     @apply grid grid-cols-3 grid-rows-2;
     @apply col-start-3 col-span-8;
     @apply gap-4;
     @apply place-self-center;
 }
 
-.button-card {
-    @apply flex flex-col;
-    @apply text-left;
-    @apply bg-[#2e2e2e];
-    @apply rounded-2xl;
-    @apply p-8;
-    @apply cursor-pointer;
-    @apply select-none;
-    @apply shadow;
-}
-
-.button-card:hover {
-    @apply bg-[#333];
-}
-
-.button-card__title {
-    @apply text-xl text-yellow-200;
-    @apply border-b border-dotted;
-    @apply w-full;
-    @apply pb-2;
-    @apply mb-2;
-}
-
-.module-card__description {
-    @apply text-lg;
-}
-
-.srp__container {
+.single-responsibility-principle {
     @apply col-start-3 col-span-8;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
